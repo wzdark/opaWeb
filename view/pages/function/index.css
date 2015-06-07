@@ -1,0 +1,157 @@
+
+#banner{
+	margin-top: 0px; 
+	height: 460px; 
+	background: url(../../styles/base/images/banner.jpg) repeat center center;
+}
+
+
+/*公告栏*/
+.notice_board{
+	font-size: 13px;
+	color: #666;
+	background-color: #FFF;
+	
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+}
+
+.notice_link{
+	color: #666;
+}
+
+.notice_link:hover{
+	text-decoration: none;	
+	color: #2f86d9;
+}
+
+
+/*公告栏下发的模块导航*/
+.modules{
+	margin: 0px 0px 30px 0px;
+}
+
+.opa_module{
+	width: 243px;
+	height: 170px;
+	background: transparent;
+	border: solid #7e7e7e 2px;
+	display: inline-block;
+	
+}
+
+.opa_module:hover{
+	border: solid #69abd8 3px;
+	/*发光效果*/
+	outline:none;
+ 	box-shadow:0 0 8px 2px rgba(135,188,223,.5);
+ 	-moz-box-shadow:0 0 8px 2px rgba(135,188,223,.5);
+ 	-webkit-box-shadow:0 0 8px 1px rgba(135,188,223,5);
+}
+
+/*每个模块的背景图*/
+.opa_module_1{
+	background: url(../../styles/base/images/module1.jpg);
+}
+
+.opa_module_1:hover{
+	background: url(../../styles/base/images/module1_selected.jpg);
+}
+
+.opa_module_2{
+	background: url(../../styles/base/images/module2.jpg);
+}
+
+.opa_module_2:hover{
+	background: url(../../styles/base/images/module2_selected.jpg);
+}
+
+.opa_module_3{
+	background: url(../../styles/base/images/module3.jpg);
+}
+
+.opa_module_3:hover{
+	background: url(../../styles/base/images/module3_selected.jpg);
+}
+
+.opa_module_4{
+	background: url(../../styles/base/images/module4.jpg);
+}
+
+.opa_module_4:hover{
+	background: url(../../styles/base/images/module4_selected.jpg);
+}
+
+.module_details{
+	background:  #FFFFFF ;
+	
+}
+
+.detail_item{
+	height: 400px;
+}
+
+.detail_text_left{
+	width: 360px;
+	float: left;
+	margin: 80px 0 0 80px;
+}
+
+.detail_text_right{
+	width: 360px;
+	float: right;
+	margin: 80px 80px 0 0;
+}
+
+.detail_img_right{
+	width: 550px;
+	float: right;
+	text-align: center;
+	line-height: 380px;
+}
+
+.detail_img_left{
+	width: 550px;
+	float: left;
+	text-align: center;
+	line-height: 380px;
+}
+
+.details_p{
+	margin: 10px 0;
+	font-size: 16px;
+	color: #666;
+	font-weight: normal;
+}
+
+.btn_check_detail{
+	display: inline-block;
+	padding-left: 22px;
+	text-align: left;
+	background: transparent url(../../styles/base/images/btn_module.png);
+	height: 43px;
+	width: 137px;
+	line-height: 43px;
+ 	margin: 10px 0px;
+ 	cursor: pointer;
+ 	font-size: 19px;
+ 	font-weight: normal;
+ 	color: #666666;
+}
+
+.btn_check_detail:hover{
+	text-decoration: none;
+	color: #666666;
+}
+
+/*公告栏黑点*/
+.dott{
+	border: 3px solid #a9a9a9;
+	border-radius: 50%;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	margin-bottom: 2px;
+}

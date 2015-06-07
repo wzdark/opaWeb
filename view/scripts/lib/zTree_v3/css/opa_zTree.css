@@ -1,0 +1,51 @@
+/*重写ztree 节点图标宽度*/
+.ztree li span.button.switch {
+	margin-right: 8px;
+	width: 5px;
+	height: 0px;
+}
+
+/*重写打开节点图片样式*/
+.ztree li span.button.noline_open{
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	vertical-align: middle;
+	border-top: 5px solid #0071c1;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	background: transparent;
+	
+}
+
+/*重写折叠节点图片样式*/			
+.ztree li span.button.noline_close{
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	vertical-align: middle;
+	border-left: 5px solid #0071c1;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	background: transparent;
+	margin-bottom: 2px;
+	
+}
+
+/*重写ztree 树的字体*/
+.ztree *{
+	font-weight: normal;
+	font-size: 14px;
+	font-family: "微软雅黑","宋体","SimSun","Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+/*重写ztree 节点行高*/
+.ztree li{
+	margin: 6px 0px 6px 0px;
+}
+
+.ztree li .nav_active{
+	color: deepskyblue;
+}
+
+

@@ -1,0 +1,380 @@
+
+/*应用中心header头 div*/
+.app_header{
+	height: 34px;    
+	margin-bottom:8px;
+	line-height: 34px;
+}
+
+/*应用中心的header左导航item*/
+.h1_nav_left{
+	float: left; 
+	font-size: 19px; 
+	color: #2f86d9;"
+}
+
+
+
+.h1_nav_left:hover{
+	text-decoration: none;
+}
+
+/*应用中心的header右侧按钮*/
+#h1_button_right{
+	display: inline-block;
+	color: #000000;
+	float: right;
+	font-size: 16px;
+	background: #f0f1f3;
+	border: #cbcbcb 1px solid;
+	height: 30px;
+	line-height: 28px;
+	width: 118px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#h1_button_right:hover{
+	text-decoration: none;
+}
+
+/*应用中心的header中部*/
+.h1_center_div{
+	width: 350px;
+	margin: 0 auto;
+}
+
+
+
+.h2_nav_left{
+	display: inline-block;
+	width: 122px;
+	margin-top: 5px;
+	float: left;
+	font-size: 16px;
+	text-align: center;
+	
+}
+
+.h2_nav_left:hover{
+	text-decoration: none;
+	
+}
+
+.h2_nav_left:link ,.h2_nav_left:visited{
+	color: #333;
+}
+
+.h2_nav_right{
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+	text-align: center;
+	width: 122px;
+	margin-top: 5px;
+	
+}
+
+.h2_nav_right:link,.h2_nav_right:visited{
+	color: #333;
+}
+
+.h2_nav_right:hover{
+	text-decoration: none;
+	
+}
+
+.h2_nav_selected{
+	border-bottom: 2px solid #0071bd;
+}
+
+.h2_nav_selected:link,.h2_nav_selected:visited{
+	color: #2F86D9;
+}
+
+
+/*第二级内容*/
+.h2_content{
+	margin-top: 30px;
+}
+
+/*应用中心界面内容左边导航list*/
+.app_nav_list{
+	float: left;
+	height: 100%;
+}
+
+.app_nav_list a{
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	border-bottom: solid 1px #d9d9db;
+	height: 40px;
+	line-height: 40px;
+	width: 164px;
+	color: #000000;
+	background: #f0f1f2;
+}
+
+.app_nav_list a:hover{
+	text-decoration: none;
+}
+
+.app_nav_list .app_nav_selected{
+	color: #F0F1F2;
+	background: #0071bd;
+}
+
+/*应用中心界面的二级内容right*/
+.app_content_right{
+	width: auto;
+	border: 1px solid transparent;
+	height: 400px;
+}
+
+/*不是开发者 成为开发者*/
+.not_dev{
+	width: 250px;
+	margin: 60px auto; 
+	text-align: center;
+	font-size: 16px;
+}
+
+.button_a{
+	display: inline-block;
+	color: #000000;
+	font-size: 16px;
+	background: #f0f1f3;
+	border: #cbcbcb 1px solid;
+	height: 30px;
+	line-height: 28px;
+	width: 118px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.button_a:hover{
+	color: #000000;
+	text-decoration: none;
+}
+
+/*完善开发者信息表单*/
+#form_toBeDeveleper{
+	width: 486px;
+	height: 680px;
+	
+	margin: 0 auto;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 16px;
+}
+
+.form_line{
+	border-bottom: 1px solid #cbcbcb;
+}
+
+#form_toBeDeveleper .form_row{
+	margin: 15px 0;
+}
+
+#form_toBeDeveleper .form_row span{
+	width: 130px;
+	display: inline-block;
+}
+
+#form_toBeDeveleper .form_row input[type=text]{
+	width: 240px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+/*创建应用表单*/
+#form_createApp{
+	width: 486px;
+	height: 680px;
+	margin: 0 auto;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 16px;
+}
+
+
+#form_createApp .form_row{
+	margin: 15px 0;
+}
+
+#form_createApp .form_row span{
+	width: 130px;
+	display: inline-block;
+}
+
+#form_createApp .form_row input[type=text]{
+	width: 240px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+/*修改应用表单*/
+#form_configApp{
+	width: 486px;
+	height: 680px;
+	margin: 0 auto;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 16px;
+}
+
+
+#form_configApp .form_row{
+	margin: 15px 0;
+}
+
+#form_configApp .form_row span{
+	width: 130px;
+	display: inline-block;
+}
+
+#form_configApp .form_row input[type=text]{
+	width: 240px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+/*应用列表div*/
+#appListDiv{
+	width: auto;
+	height: 680px;
+	margin: 0 0 0 260px;
+	font-size: 14px;
+	box-sizing: border-box;
+	
+}
+
+#grid_app_data{
+	margin-top: 40px;
+	border: 1px solid red;
+	height: 300px;
+}
+
+/*应用测试*/
+#form_appTest{
+	width: 754px;
+	height: 680px;
+	margin: 0 auto;
+	font-size: 14px;
+	box-sizing: border-box;
+	/*border: 1px solid red;*/
+	margin-left: 240px;
+}
+
+
+#form_appTest .form_row{
+	margin: 15px 0;
+}
+
+#form_appTest .form_row span{
+	width: 80px;
+	display: inline-block;
+}
+
+#form_appTest .form_row input[type=text]{
+	width: 240px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+/*批准授权列表div*/
+.authorlist_item{
+	width: 754px;
+	height: 400px;
+	margin: 0 auto;
+	font-size: 14px;
+	box-sizing: border-box;
+	
+	margin-left: 210px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.authorlist_item .describe_left{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	margin-right: 20px;
+	font-size: 14px;
+}
+
+.authorlist_item .content_right{
+	display: inline-block;
+	width: 120px;
+	text-align: left;
+	font-size: 14px;
+}
+
+.authorlist_item .opa_row{
+	margin: 20px 0 20px 20px;
+	text-align: left;
+	width: 550px;
+	
+}
+
+.author_api_div{
+	display: inline-block;
+	width: 410px;
+	height: 100px;
+	border: solid 1px #dddddd;
+}
+
+.authorlist_item .float_right{
+	width: 90px;
+	height: 300px;
+	float: right;
+	
+	margin-right: 30px;
+	text-align: center;
+}
+
+.author_state_icon{
+	width: 74px;
+	height: 74px;
+	background: url(images/author_accept.png);
+	margin: 10px auto 55px;
+}
+
+.btn_author_blue{
+	display: inline-block;
+	width: 60px;
+	height: 26px;
+	color: #FFFFFF;
+	border: none;
+	background: #0071bd;
+	margin-bottom: 20px;
+}
+
+.btn_author_red{
+	display: inline-block;
+	width: 60px;
+	height: 26px;
+	color: #FFFFFF;
+	border: none;
+	background: #ff5f5f;
+}
+
+/*客户端配置div*/
+#clientConfigDiv{
+	width: auto;
+	height: 680px;
+	margin: 0 0 0 260px;
+	font-size: 14px;
+	box-sizing: border-box;
+	
+}
+
+#grid_client_config_data{
+	margin-top: 40px;
+	border: 1px solid red;
+	height: 300px;
+}
+
+
+
+

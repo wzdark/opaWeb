@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>API中心</title>
+		<!--
+        	外部类库 jquery and bootStrape
+        -->
+		<script type="text/javascript" src="../../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		
+		<!--
+			zTree
+		-->
+		<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/opa_zTree.css"/>
+		<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ztree.core-3.5.js"></script>
+		
+		<!--
+        	本项目类库
+        -->
+        <!--<link rel="stylesheet" type="text/css" href="../../view/styles/base/sina_init.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../../view/styles/base/common.css"/>
+		<link href="./apizhongxin_files/css.css?v=1" rel="stylesheet" type="text/css">
+	
+
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="content_body">
+				<div class="app_header" style="height: 34px;   line-height:34px;   overflow:hidden;  ">
+					<a class="nav_link" style="float: left; font-size: 19px; color: #2f86d9;" href="appList.html">API中心</a>
+					
+					
+				</div>
+				<div class="dashed_line"></div>
+				
+			    <div class="saider">
+				    	
+				  		<div style="float: left;"> 
+				  			<ul id="treeDemo" class="ztree"></ul>
+	
+				  		</div>
+				
+				
+						<div class="content2">
+						
+						<table width="843" cellspacing="0" border="1px" cellpadding="10" class="br">
+						  <tbody><tr>
+						    <td>平台类API</td>
+						    <td>基础档案类API</td>
+						    <td> 总账类API  </td>
+						    <td>销售管理类API</td>
+						    <td>应收管理类API</td>
+						  </tr>
+						</tbody></table>
+						<p style="font-size:16px;margin-top:70px">平台类API</p>
+						
+						<p style="13px">主要使用场景：获取在开放平台中需要的信息。</p>
+						
+						<table width="750" border="1" cellspacing="0" cellpadding="10">
+						  <tbody>
+						  	<tr style="background-color:#666; color:#FFF; text-align:center; ">
+							    <td>接口分类</td>
+							    <td>接口名称</td>
+							    <td>接口功能说明</td>
+							    <td>接口详细文档</td>
+							  </tr>
+							  <tr >
+							    <td>交易号</td>
+							    <td>获取交易号 </td>
+							    <td>获取交易号</td>
+							    <td><a href="">tradeid/get</a> </td>
+							  </tr>
+							  <tr >
+							    <td>Token</td>
+							    <td>获取Token</td>
+							    <td>获取Token</td>
+							    <td><a href="">tradeid/get</a> </td>
+							  </tr>
+							</tbody>
+						</table>
+						
+						 
+						 <p style="font-size:16px;margin-top:70px">基础档案类API</p>
+						
+						<p style="13px">主要使用场景：获取企业ERP中基础档案的信息。</p>
+						
+						<table width="750" border="1" cellspacing="0" cellpadding="10">
+						  <tbody><tr style="background-color:#666; color:#FFF; text-align:center; ">
+						    <td>接口分类</td>
+						    <td>接口名称</td>
+						    <td>接口功能说明</td>
+						    <td>接口详细文</td>
+						  </tr>
+						  <tr style="text-align:center; font-size:12px">
+						    <td rowspan="2">部门档案</td>
+						    <td>部门查询  </td>
+						    <td> 获取企业某一个部门的档案</td>
+						    <td><a href="">department/get</a> </td>
+						  </tr>
+						  <tr style="text-align:center; font-size:12px">
+						    <td>部门批量查询</td>
+						    <td>批量获取企业部门的档案</td>
+						    <td><a href="">department/batch_get</a> </td>
+						  </tr>
+						</tbody></table>
+						
+						</div>
+						
+					</div>
+				
+				
+			</div>
+			
+			<div class="global_footer">
+				
+				<div class="footer_line">
+					
+				</div>
+				<div class="footer_body">
+					<a class="normal_link" href="#about">关于用友优普开放平台</a>
+					丨       
+					<a class="normal_link" href="#about">联系我们</a>
+					丨        
+		        	<a class="normal_link" href="#about">平台服务协议</a>
+		        	丨
+			        <a class="normal_link" href="#about"> 用友优普</a>        
+				</div>
+				<div class="footer_bottom">
+					用友优普信息技术有限公司 © yonyou up information technology Co., Ltd.
+				</div>
+		</div>
+		</div>
+	
+		
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script type="text/javascript">
+			function Person(){
+				
+				this.age = 18;
+				
+			}
+			
+			Person.prototype = {
+				name : 'aa',
+				sayName : function(){
+					alert(this.name);
+				}
+			}
+			
+			var p1 = new Person();
+			p1.sayName();
+			var p2 = new Person();
+			p2.sayName();
+			
+			
+		</script>
+		<style type="text/css">
+			.tag{
+				display: inline-block;
+				width: auto;
+				background: burlywood;
+				text-align: center;
+				padding: 6px 20px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="" style="padding: 20px 20px; width: 300px; background: gray;">
+			<div class="tag">
+				报销
+			</div>
+			<div class="tag">
+				财务
+			</div>
+			<div class="tag">
+				软件
+			</div>
+			<div class="tag">
+				大写
+			</div>
+		</div>
+	
+	</body>
+</html>

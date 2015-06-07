@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>API中心</title>
+		<!--
+        	外部类库 jquery and bootStrape
+        -->
+		<script type="text/javascript" src="../../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		
+		<!--
+        	插件 ztree
+        -->
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/opa_zTree.css" type="text/css">
+		<script type="text/javascript" src="../../../scripts/lib/zTree_v3/js/jquery.ztree.core-3.5.js"></script>
+			
+		<!--
+        	本项目类库
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../styles/base/sina_init.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../styles/base/common.css"/>
+		<link href="../../../styles/function/api/apiCenter.css" rel="stylesheet" type="text/css">
+		
+		<SCRIPT type="text/javascript">
+		
+		var setting = {
+			view: {
+				dblClickExpand: false,
+				showLine: false,
+				showIcon: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				onClick: onClick
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"平台", open:true},
+			{ id:11, pId:1, name:"交易号", open:true},
+			{ id:111, pId:11, name:"获取"},
+			
+			{ id:12, pId:1, name:"Token", open:true},
+			{ id:121, pId:12, name:"获取"},
+			
+			{ id:13, pId:1, name:"基础档案", open:false},
+			{ id:131, pId:13, name:"xxx"},
+			
+			{ id:14, pId:1, name:"总账", open:false},
+			{ id:141, pId:14, name:"xxx"},
+			
+			{ id:15, pId:1, name:"销售管理", open:true},
+			{ id:151, pId:15, name:"销售订单", open:true},
+			{ id:1511, pId:151, name:"新增"},
+			{ id:152, pId:15, name:"销售发货单", open:true},
+			{ id:1521, pId:152, name:"新增"},
+			{ id:153, pId:15, name:"退货申请单", open:true},
+			{ id:1531, pId:153, name:"新增"},
+			
+			{ id:16, pId:1, name:"应收管理", open:true},
+			{ id:161, pId:16, name:"收款单", open:true},
+			{ id:1611, pId:161, name:"新增"},
+		];
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.expandNode(treeNode);
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		//-->
+	</SCRIPT>
+		
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="content_body">
+				<div class="app_header" style="height: 34px;   line-height:34px;   overflow:hidden;  ">
+					<a class="nav_link" style="float: left; font-size: 19px; color: #2f86d9;" href="appList.html">API中心</a>
+					
+					
+				</div>
+				<div class="dashed_line"></div>
+				
+			    <div class="api_content">
+				    	
+			  		<div class="api_left_nav"> 
+			  			<ul id="treeDemo" class="ztree"></ul>
+			  		</div>
+			  		
+			  		<div class="api_right_content">
+			  			
+		  				<div class="api_top_nav">
+
+			  				<span class="api_top_nav_item">
+			  					<a href="#">平台类API</a>
+			  				</span>
+			  				<span class="api_top_nav_item">
+			  					<a href="#">基础档案类API</a>
+			  				</span>
+			  				<span class="api_top_nav_item">
+			  					<a href="#">总账类API</a>
+			  				</span>
+			  				<span class="api_top_nav_item">
+			  					<a href="#">销售管理类API</a>
+			  				</span>
+			  				<span class="api_top_nav_item api_top_nav_item_tail">
+			  					<a href="#">应收管理类API</a>
+			  				</span>
+			  			</div>
+			  			
+						
+						<h3>平台类API</h3>
+			  			<p>主要使用场景：获取在开放平台中需要的信息。</p>
+			  			<table>
+						  <tbody>
+						  	<tr>
+							    <th>接口分类</th>
+							    <th>接口名称</th>
+							    <th>接口功能说明</th>
+							    <th>接口详细文档</th>
+						  	</tr>
+							  <tr style="text-align:center; font-size:12px">
+							    <td>交易号</td>
+							    <td>获取交易号 </td>
+							    <td>获取交易号</td>
+							    <td><a href="">tradeid/get</a> </td>
+							  </tr>
+							  <tr style="text-align:center; font-size:12px">
+							    <td>Token</td>
+							    <td>获取Token</td>
+							    <td>获取Token</td>
+							    <td><a href="">tradeid/get</a> </td>
+							  </tr>
+							</tbody>
+			  			</table>
+			  			
+			  			<div style="margin-top: 30px;">	
+			  			</div>
+			  			
+			  			<h3>基础档案类API</h3>
+			  			<p>主要使用场景：获取企业ERP中基础档案的信息。</p>
+			  			<table >
+						  <tbody>
+						  	  <tr>
+							    <th>接口分类</th>
+							    <th>接口名称</th>
+							    <th>接口功能说明</th>
+							    <th>接口详细文</th>
+							  </tr>
+							  <tr>
+							    <td rowspan="2">部门档案</td>
+							    <td>部门查询  </td>
+							    <td> 获取企业某一个部门的档案</td>
+							    <td><a href="">department/get</a> </td>
+							  </tr>
+							  <tr>
+							    <td>部门批量查询</td>
+							    <td>批量获取企业部门的档案</td>
+							    <td><a href="">department/batch_get</a> </td>
+							  </tr>
+							</tbody>
+			  			</table>
+			  			
+			  			
+			  			
+			  		</div>
+				
+			</div>
+			
+			<div class="global_footer">
+				
+				<div class="footer_line">
+					
+				</div>
+				<div class="footer_body">
+					<a class="normal_link" href="#about">关于用友优普开放平台</a>
+					丨       
+					<a class="normal_link" href="#about">联系我们</a>
+					丨        
+		        	<a class="normal_link" href="#about">平台服务协议</a>
+		        	丨
+			        <a class="normal_link" href="#about"> 用友优普</a>        
+				</div>
+				<div class="footer_bottom">
+					用友优普信息技术有限公司 © yonyou up information technology Co., Ltd.
+				</div>
+		</div>
+		</div>
+	
+		
+	</body>
+</html>

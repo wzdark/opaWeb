@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文档中心</title>
+		<!--
+        	外部类库 jquery and bootStrape
+        -->
+		<script type="text/javascript" src="../../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		
+		<!--
+        	插件 ztree
+        -->
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/opa_zTree.css" type="text/css">
+		<script type="text/javascript" src="../../../scripts/lib/zTree_v3/js/jquery.ztree.core-3.5.js"></script>
+			
+		<!--
+        	本项目类库
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../styles/base/sina_init.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../styles/base/common.css"/>
+		<link href="../../../styles/function/documentCenter/documentCenter.css" rel="stylesheet" type="text/css">
+		
+		<SCRIPT type="text/javascript">
+		
+		var setting = {
+			view: {
+				dblClickExpand: false,
+				showLine: false,
+				showIcon: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				onClick: onClick
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"平台概述", open:true},
+			{ id:11, pId:1, name:"平台简介", target:'_self', url:"/"},
+			{ id:12, pId:1, name:"开放业务", open:true},
+			{ id:13, pId:1, name:"平台公约", open:true},
+			 
+			
+
+			{ id:3, pId:0, name:"政策规范", open:true},
+			{ id:31, pId:3, name:"用户服务协议"},
+			{ id:32, pId:3, name:"隐私权政策"},
+			{ id:33, pId:3, name:"开发者协议"},
+			{ id:34, pId:3, name:"企业开放数据协议"},
+
+			
+			{ id:4, pId:0, name:"开发文档", open:true},
+			{ id:41, pId:4, name:"开发者入门"},
+			{ id:42, pId:4, name:"开发常用场景"},
+			{ id:43, pId:4, name:"API中心"},
+			
+			{ id:5, pId:0, name:"常见问题"},
+			{ id:6, pId:0, name:"联系我们"},
+
+		];
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.expandNode(treeNode);
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			
+			//初始化某个节点的颜色
+			var nodeURL = '';
+			var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+			var node = treeObj.getNodeByParam("url", nodeURL, null);
+			if (node == null){
+				return;
+			}
+			$('#'+node.tId).find('a').addClass('nav_active');
+		});
+		//-->
+	</SCRIPT>
+		
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="content_body">
+				<div class="app_header" style="height: 34px;    overflow:hidden; margin-bottom:8px ">
+					<a class="nav_link" style="float: left; font-size: 19px; color: #2f86d9;" href="#">文档中心</a>
+				</div>
+				<div class="dashed_line"></div>
+				
+			    <div class="api_content">
+				    	
+			  		<div class="api_left_nav"> 
+			  			<ul id="treeDemo" class="ztree"></ul>
+			  		</div>
+			  		
+			  		<div class="api_right_content api_index">
+			  			<div class="h1_header">
+			  				平台概述
+			  			</div>
+			  			<ul>
+			  				<li >
+			  					<a href="">平台简介</a>
+			  				</li>
+			  				<li >
+			  					<a href="">开放业务</a>
+			  				</li>
+			  				<li >
+			  					<a href="">平台公约</a>
+			  				</li>
+			  			</ul>
+			  			<div class="h1_header">
+			  				政策规范
+			  			</div>
+			  			<ul>
+			  				<li >
+			  					<a href="">用户服务协议</a>
+			  				</li>
+			  				<li >
+			  					<a href="">隐私权政策</a>
+			  				</li>
+			  				<li >
+			  					<a href="">开发者协议</a>
+			  				</li>
+			  				<li >
+			  					<a href="">企业开放数据协议</a>
+			  				</li>
+			  				
+			  			</ul>
+			  			<div class="h1_header">
+			  				开发文档
+			  			</div>
+			  			<ul>
+			  				<li >
+			  					<a href="">开发者入门</a>
+			  				</li>
+			  				<li >
+			  					<a href="">开放常用场景</a>
+			  				</li>
+			  				<li >
+			  					<a href="">API中心</a>
+			  				</li>
+			  				
+			  				
+			  			</ul>
+			  		</div>
+				
+			</div>
+			
+			<div class="global_footer">
+				
+				<div class="footer_line">
+					
+				</div>
+				<div class="footer_body">
+					<a class="normal_link" href="#about">关于用友优普开放平台</a>
+					丨       
+					<a class="normal_link" href="#about">联系我们</a>
+					丨        
+		        	<a class="normal_link" href="#about">平台服务协议</a>
+		        	丨
+			        <a class="normal_link" href="#about"> 用友优普</a>        
+				</div>
+				<div class="footer_bottom">
+					用友优普信息技术有限公司 © yonyou up information technology Co., Ltd.
+				</div>
+		</div>
+		</div>
+	
+		
+	</body>
+</html>

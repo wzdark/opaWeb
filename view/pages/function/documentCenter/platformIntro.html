@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>平台简介</title>
+		<!--
+        	外部类库 jquery and bootStrape
+        -->
+		<script type="text/javascript" src="../../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		
+		<!--
+        	插件 ztree
+        -->
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/opa_zTree.css" type="text/css">
+		<script type="text/javascript" src="../../../scripts/lib/zTree_v3/js/jquery.ztree.core-3.5.js"></script>
+			
+		<!--
+        	本项目类库
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../styles/base/sina_init.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../styles/base/common.css"/>
+		<link href="../../../styles/function/documentCenter/documentCenter.css" rel="stylesheet" type="text/css">
+		
+		<SCRIPT type="text/javascript">
+		
+		var setting = {
+			view: {
+				dblClickExpand: false,
+				showLine: false,
+				showIcon: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				onClick: onClick
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"平台概述", open:true},
+			{ id:11, pId:1, name:"平台简介", target:'_self', url:"/OpaWeb/view/pages/function/documentCenter/platformIntro.html"},
+			{ id:12, pId:1, name:"开放业务", open:true},
+			{ id:13, pId:1, name:"平台公约", open:true},
+			 
+			
+
+			{ id:3, pId:0, name:"政策规范", open:true},
+			{ id:31, pId:3, name:"用户服务协议"},
+			{ id:32, pId:3, name:"隐私权政策"},
+			{ id:33, pId:3, name:"开发者协议"},
+			{ id:34, pId:3, name:"企业开放数据协议"},
+
+			
+			{ id:4, pId:0, name:"开发文档", open:true},
+			{ id:41, pId:4, name:"开发者入门"},
+			{ id:42, pId:4, name:"开发常用场景"},
+			{ id:43, pId:4, name:"API中心"},
+			
+			{ id:5, pId:0, name:"常见问题"},
+			{ id:6, pId:0, name:"联系我们"},
+
+		];
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.expandNode(treeNode);
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			
+			//初始化某个节点的颜色
+			var nodeURL = '/OpaWeb/view/pages/function/documentCenter/platformIntro.html';
+			var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+			var node = treeObj.getNodeByParam("url", nodeURL, null);
+			if (node == null){
+				return;
+			}
+			$('#'+node.tId).find('a').addClass('nav_active');
+			
+			//显示隐藏按钮初始化
+			$('#hide_show_btn').click(function(){
+				var dis = $(this).attr('isHide');
+				var i = 'isHide'.indexOf(dis);
+				
+				//隐藏目录
+				if (i >= 0){
+					$('#cataLog').find('ul').addClass('display_none');
+					$('#cataLog').find('ul').removeClass('display_platform');
+					$(this).html('[显示]') ;
+					$(this).attr('isHide',null);
+					
+				}
+				//显示目录
+				else{
+					$(this).html('[隐藏]') ;
+					$(this).attr('isHide','isHide');
+					$('#cataLog').find('ul').addClass('display_platform');
+					$('#cataLog').find('ul').removeClass('display_none');
+					
+				}
+			});
+		
+		});
+		
+		
+		
+		
+	</SCRIPT>
+		
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="content_body">
+				<div class="app_header" style="height: 34px;    overflow:hidden; margin-bottom:8px ">
+					<a class="nav_link" style="float: left; font-size: 19px; color: #2f86d9;" href="#">文档中心</a>
+				</div>
+				<div class="dashed_line"></div>
+				
+			    <div class="api_content" style="height: 1000px;">
+				    	
+			  		<div class="api_left_nav"> 
+			  			<ul id="treeDemo" class="ztree"></ul>
+			  		</div>
+			  		
+			  		<div class="api_right_content">
+			  			<h2>平台简介</h2>
+			  			<div class="document_header_line">
+			  				
+			  			</div>
+			  			
+			  			<a href="#" id="hide_show_btn" isHide='isHide'>[隐藏]</a>
+			  			<div id="cataLog">
+			  				
+		  					<h3>目录</h3>
+			  				
+			  				<ul class="display_platform display_base">
+			  					<li>
+			  						<a href="#detail1">1. 什么是用友优普开放平台</a>
+			  					</li>
+			  					<li>
+			  						<a href="#detail2">2. 平台优势</a>
+			  					</li>
+			  					<li>
+			  						<a href="#detail3">3. 在平台能做什么</a>
+			  					</li>
+			  					<li>
+			  						<a href="#detail4">4. 成功案例</a>
+			  					</li>
+			  				</ul>
+			  			</div>
+			  			
+			  			<div class="document_detals">
+			  				<h3 name='detial1' id='detail1'><b>1. 什么是用友优普开放平台</b></h3>
+			  				<p name='detial1' id='detail1'>
+			  					用友优普开放平台（open.yonyouup.com）是基于用友优普大量的企业用户和U8、U9的开放接口
+			  					，接入外部合作伙伴，为企业用户提供丰富应用和完善服务的开放平台。
+			  				</p>
+			  				<h3 name='detial2' id='detail2'><b>2. 平台优势</b></h3>
+			  				<p>
+			  					用友优普信息技术有限公司是用友软件股份有限公司的全资子公司， 
+			  					专注于为中型、中大型企业客户提供软件 （U8+、U9、PLM、CRM）、行业解决方案以及企业云 服务等全面解决方案，帮助企业在互联网、
+			  					移动时代继续拥有和不断提升管理及运营优势，成就“数据驱动的企业”。
+			  				</p>	
+			  				<h3>U8+</h3>
+			  				<p>成长型企业互联网应用平台，全球第一中型企业应用平台。</p>
+			  				<p>U8+，600,000 家成长型企业、5000 家极具创新力企业的共同选择。</p>
+			  				<p>在中国及亚太地区，最具竞争力的软件及服务供应商。</p>
+			  				<p>连续12年，中国企业管理软件市场占有率第一。</p>
+			  				<p>连续12年，中国ERP软件市场占有率第一。</p>
+			  				<p>连续22年，中国财务管理软件市场占有率第一。</p>
+			  				<p>中国CRM软件市场占有率第一。</p>
+			  				<p>中国HRM软件市场占有率第一。</p>
+			  				<h3>U9</h3>
+			  				<p>多组织企业互联网应用平台，离散制造企业首选应用平台。</p>
+			  				<p>用友U9秉承互联网基因，是全球第一款基于SOA云架构的多组织企业互联网应用平台。
+								U9以精细化管理、产业链协协同与社交化商业，帮助多组织企业（多事业部/多地点/多工厂/多法人）
+								在互联网时代实现商业模式创新、组织变革与管理升级。
+			  				</p>
+			  				<h3 name='detial3' id='detail3'><b>3. 在平台能做什么</b></h3>
+			  				<p>
+			  					用友优普开放平台欢迎广大开发者的加入。
+		  					</p>
+							<p>
+								加入我们，为U8+600,000 家成长型企业、5000 家极具创新力企业提供服务。 
+							</p>
+							<p>
+								加入我们，为U9的广大离散制造企业提供服务。
+							</p>
+							
+			  				<h3 name='detial4' id='detail4'><b>4. 成功案例</b></h3>
+			  				<p>
+			  					U-订货
+			  				</p>
+			  			</div>
+			  		
+			  		</div>
+				
+			</div>
+			
+			<div class="global_footer">
+				
+				<div class="footer_line">
+					
+				</div>
+				<div class="footer_body">
+					<a class="normal_link" href="#about">关于用友优普开放平台</a>
+					丨       
+					<a class="normal_link" href="#about">联系我们</a>
+					丨        
+		        	<a class="normal_link" href="#about">平台服务协议</a>
+		        	丨
+			        <a class="normal_link" href="#about"> 用友优普</a>        
+				</div>
+				<div class="footer_bottom">
+					用友优普信息技术有限公司 © yonyou up information technology Co., Ltd.
+				</div>
+		</div>
+		</div>
+	
+		
+	</body>
+</html>

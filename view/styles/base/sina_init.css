@@ -1,0 +1,30 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,img,div{
+	margin:0;
+	padding:0;
+	border:0;
+} 
+body{
+	background:#fff;
+	color:#333;
+	font-size:12px; 
+	font-family:"SimSun","宋体","Arial Narrow";
+} 
+ 
+ul,ol{
+	list-style-type:none;
+} 
+select,input,img,select{
+	vertical-align:middle;
+	} 
+ 
+a{
+	text-decoration:none;
+	} 
+a:link{
+	color: #2f86d9;
+	} 
+
+a:hover,a:active,a:focus{
+	color:#0f86d9;
+	text-decoration:underline;
+	} 

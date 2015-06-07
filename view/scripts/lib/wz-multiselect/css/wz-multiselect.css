@@ -1,0 +1,30 @@
+.wz_multiSelect_container{
+	padding: 0px 4px 0px 0px;
+}
+
+.wz_multiSelect_item{
+	border: 1px solid #F2F2F2;
+	display: inline-block;
+	padding: 0px 27px 0px 7px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0px 20px 20px 0px;
+	cursor: pointer;
+	background: transparent;
+}
+
+.wz_multiSelect_item:hover{
+	background: url(../images/tag_hover.png) no-repeat right center;
+    color: #369;
+    border: 1px solid #369
+}
+
+.wz_multiSelect_container .wz_multiSelect_active{
+	background: #369 url(../images/tag_selected.png) no-repeat  right center ;
+	color: #FFFFFF ;
+}
+
+
+.margin_left_0{
+	margin-left: 0px;
+}
