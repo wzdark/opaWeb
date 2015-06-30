@@ -11,6 +11,13 @@
 		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
 		
+		<!--jquery validate-->
+		<script src="../../../scripts/lib/jquery/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../scripts/lib/jquery-validation/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/jquery-validation/jquery.validate.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/jquery-validation/css/opa_validate.css"/>
+		
+		<script src="../../../scripts/lib/angular/angularjs_1.2.2.js" type="text/javascript" charset="utf-8"></script>
 		
 		<!--
         	本项目类库
@@ -19,8 +26,127 @@
 		<link rel="stylesheet" type="text/css" href="../../../styles/base/common.css"/>
 		<link rel="stylesheet" type="text/css" href="../../../styles/function/app/app.css"/>
 		
+		
+		<!--angular data init-->
+		<script type="text/javascript">
+			
+			
+			var toBeDeveloper_Module = angular.module('toBeDeveloper_Module',[]);
+ 
+		    toBeDeveloper_Module.controller('formCtrl', ['$scope', '$http',function($scope,$http) {
+		        /*初始化开发者数据，通过angular的http服务向后天发送ajax请求*/
+		        var config = {
+					 method: 'POST',
+					 url: 'http://example.com',
+					 headers: {
+					   'Content-Type': undefined
+					 },
+					 data: { test: 'test' }
+				}
+
+				$http(config).success(function(data, status, headers, config){
+					$scope.user = data;
+				})
+				.error(function(data, status, headers, config){
+					
+				});
+		        
+		        
+		    }]);
+		</script>
+		
+		<script>
+			$(function(){
+				//表单验证
+				$('#form_toBeDeveleper').validate({
+				  
+				  rules: {
+				    // simple rule, converted to {required:true}
+				    businessLicenseNo: {
+				    	required: true,
+				    	maxlength: 20
+				    },
+				    businessLicenseImg: {
+				    	required: true
+				    },
+				    connectUser: {
+				    	required: true,
+				    	maxlength: 20
+				    },
+				    connectIdCardNo: {
+				    	required: true,
+				    	maxlength: 20
+				    },
+				    connectIdCardImg: {
+				    	required: true
+				    },
+				    connectMobile: {
+				    	required: true,
+				    	maxlength: 20
+				    },
+				    shotMsgIdentify: {
+				    	required: true,
+				    	maxlength: 20
+				    }
+				    
+				  },
+				  messages:{
+				  	businessLicenseNo: {
+				  		required : "营业执照注册号不能为空",
+				  		maxlength : "最大不能超过20个字符"
+				  	},
+				  	
+				    businessLicenseImg: {
+				    	required: "营业执照扫描件不能为空"
+				    },
+				    connectUser: {
+				    	required: "联系人姓名不能为空",
+				    	maxlength: "最大不能超过20个字符"
+				    },
+				    connectIdCardNo: {
+				    	required: "联系人身份证不能为空",
+				    	maxlength: "最大不能超过20个字符"
+				    },
+				    connectIdCardImg: {
+				    	required: "身份证照片不能为空"
+				    },
+				    connectMobile: {
+				    	required: "联系人手机号码不能为空",
+				    	maxlength: "最大不能超过20个字符",
+				    },
+				    shotMsgIdentify: {
+				    	required: "短信验证码不能为空",
+				    	maxlength: "最大不能超过20个字符",
+				    }
+				  },
+				  submitHandler: function(form) {
+				  	alert('a');
+				  	return;
+				    // do other things for a valid form
+				    form.submit();
+				  }
+				  
+				});
+				
+				//提交按钮
+				$('#agreement').click(function(){
+					var check = $(this).prop('checked');
+					if (check){
+						$('#commit').removeAttr('disabled');
+						$('#commit').removeClass('disabled_btn');
+					}
+					else{
+						$('#commit').attr('disabled','disabled');
+						$('#commit').addClass('disabled_btn');
+					}
+				});
+				
+			});
+			
+		</script>
+		
 	</head>
-	<body>
+	<body ng-app="toBeDeveloper_Module">
 		<div class="container">
 			
 			<div class="content_body">
@@ -32,32 +158,31 @@
 				<div class="dashed_line"></div>
 				
 				<div class="h2_content">
-					<form id="form_toBeDeveleper" action="#" method="post">
+					<form ng-controller="formCtrl" id="form_toBeDeveleper" action="#" method="post">
 						<div class="form_row">
 							<span>
 								营业执照注册号
 							</span>
-							<input type="text" id="" value="" />
-						</div>
-						<div style="margin-top: -10px;">
-							<span style="margin-left: 133px; color: #817f7f; ">
-								请输入15位营业执照注册号
-							</span>
+							<div class="inner_row">
+								
+								<input type="text" name="businessLicenseNo" id="businessLicenseNo" value="{{user.username}}" />	
+								<span  style="width: auto;margin-top: 0; color: #817f7f; ">
+									请输入15位营业执照注册号
+								</span>
+							</div>
+							
 						</div>
 						
 						<div class="form_row">
 							<span>
-								营业执照注册地
-							</span>
-							
-							<input type="text" id="" value="" />
-						</div>
-						<div class="form_row">
-							<span>
 								营业执照扫描件
 							</span>
+							<div class="inner_row">
+								<a href="#" class="btn_normal">上传文件</a>
+								<input style="display: none;" type="text" name="businessLicenseImg" id="businessLicenseImg" value="" />
+								
+							</div>
 							
-							<a href="#" class="btn_normal">上传文件</a>
 						</div>
 						<div class="form_line" >
 							
@@ -66,49 +191,66 @@
 							<span>
 								联系人姓名
 							</span>
-							<input type="text" id="" value="" />
+							<div class="inner_row">
+								<input type="text" id="connectUser" name="connectUser" value="" />
+							</div>
+							
 						</div>
 						<div class="form_row">
 							<span>
 								联系人身份证
 							</span>
-							<input type="text" id="" value="" />
+							<div class="inner_row">
+								<input type="text" id="connectIdCardNo" name="connectIdCardNo" value="" />
+								<img style="height: 100px; display: none;" src="../../../../done/API中心+用户中心/apizhongxin_files/api_line.jpg"/>
+							</div>
+							
 						</div>
 						<div class="form_row">
 							<span>
-								联系人照片
+								联系人身份证照片
 							</span>
-							<a href="#" class="btn_normal">上传文件</a>
-						
+							<div class="inner_row">
+								<a href="#" class="btn_normal">上传文件</a>
+								<input style="display: none" type="text" id="connectIdCardImg" name="connectIdCardImg" value="" />
+								
+								<img style="height: 100px; display: none;" src="../../../../done/API中心+用户中心/apizhongxin_files/api_line.jpg"/>
+							</div>
+							
 						</div>
 						<div class="form_row">
 							<span>
 								联系人手机号码
 							</span>
-							<input type="text" id="" value="" />
-						
+							<div class="inner_row">
+								<input type="text" id="connectMobile" name="connectMobile" value="" />
+							</div>
+							
 						</div>
 						<div class="form_row">
 							<span>
 								短信验证码
 							</span>
-							<input type="text" id="" value="" />
+							<div class="inner_row">
+								<input type="text" id="shotMsgIdentify" name="shotMsgIdentify" value="" />
+							</div>
+							
 						</div>
 						<div class="form_row">
 							<div style="margin-left: 135px;">
-								<input style="margin-top: -3px;" type="checkbox" name="" id="" value="false" />
+								<input style="margin-top: -3px;" type="checkbox" name="agreement" id="agreement" value="false" />
 								我同意并遵守
 								<a href="#" style="text-decoration: underline;">开发者协议</a>
 							</div>	
 							
 						</div>
 						<div class="form_row" style="text-align: center;">
-							<input class="btn_normal btn_radius" style="margin-top: 20px; height: 35px ; width: 100px; font-size: 16px;" type="submit" value="提 交"></input>
+							<input id="commit" class="btn_normal btn_radius disabled_btn" style="margin-top: 20px; height: 35px ; width: 100px; font-size: 16px;" type="submit" value="提 交" disabled="disabled"></input>
 						</div>
 					</form>
 				</div>
 			</div>
-			
+			<input type="button" id="" value="aaa" onclick="refresh();"/>
 			
 		</div>
 	

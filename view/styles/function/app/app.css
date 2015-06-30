@@ -180,13 +180,27 @@
 #form_toBeDeveleper .form_row span{
 	width: 130px;
 	display: inline-block;
+	margin-top: 5px;
 }
 
 #form_toBeDeveleper .form_row input[type=text]{
 	width: 240px;
 	height: 30px;
 	box-sizing: border-box;
+	margin-bottom: 5px;
 }
+
+#form_toBeDeveleper .form_row .btn_normal{
+	height: 29px;
+}
+
+#form_toBeDeveleper .form_row .inner_row{
+	display: inline-block;
+	width: 240px;
+	vertical-align: top;
+}
+
+
 
 /*创建应用表单*/
 #form_createApp{
@@ -252,8 +266,21 @@
 
 #grid_app_data{
 	margin-top: 40px;
-	border: 1px solid red;
-	height: 300px;
+	font-size: 14px;
+}
+
+#grid_app_data th{
+	text-align: center;
+	padding: 4px 0;
+	border: #3f3f3f solid 1px;
+	background: #666666;
+	color: #fff;
+}
+
+#grid_app_data td{
+	text-align: center;
+	padding: 4px 0;
+	border: #3f3f3f solid 1px;
 }
 
 /*应用测试*/
@@ -375,6 +402,34 @@
 	height: 300px;
 }
 
+.opa_multi_container{
+	display: inline-block;
+	
+	box-sizing: border-box;
+	width: 300px;
+}
 
+.opa_multi_container a.item{
+	display: inline-block;
+	border: 1px solid #F2F2F2;
+	color: #06C;
+	text-decoration: none;
+	cursor: pointer;
+	padding: 1px 27px 1px 7px;
+	
+	margin: 0px 8px 5px 0px;
+	
+}
+
+.opa_multi_container a:hover{
+	  background: url(../../../scripts/lib/wz-multiselect/images/tag_hover.png) no-repeat right center;
+	  color: #369;
+	  border: 1px solid #369;
+}
+
+.opa_multi_container a.selected{
+	background: #369 url(../../../scripts/lib/wz-multiselect/images/tag_selected.png) no-repeat scroll right center;
+	color: #FFF;
+}
 
 

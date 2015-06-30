@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>API中心</title>
+		<!--
+        	外部类库 jquery and bootStrape
+        -->
+		<script type="text/javascript" src="../../../scripts/lib/jquery/jquery-1.11.3.js" ></script>
+		<script src="../../../scripts/lib/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../../scripts/lib/bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		
+		<!--
+        	插件 ztree
+        -->
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="../../../scripts/lib/zTree_v3/css/opa_zTree.css" type="text/css">
+		<script type="text/javascript" src="../../../scripts/lib/zTree_v3/js/jquery.ztree.core-3.5.js"></script>
+			
+		<!--
+        	本项目类库
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../styles/base/sina_init.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../styles/base/common.css"/>
+		<link href="../../../styles/function/api/apiCenter.css" rel="stylesheet" type="text/css">
+		<link href="open_platform_v3_wiki_new.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="open_platform_v3_wiki_second_new.css" type="text/css" rel="stylesheet">
+		<script src="wikibits.js"></script>
+		
+		
+		<SCRIPT type="text/javascript">
+		
+		var setting = {
+			view: {
+				dblClickExpand: false,
+				showLine: false,
+				showIcon: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				onClick: onClick
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"平台", open:true},
+			{ id:11, pId:1, name:"交易号", open:true},
+			{ id:111, pId:11, name:"获取"},
+			
+			{ id:12, pId:1, name:"Token", open:true},
+			{ id:121, pId:12, name:"获取"},
+			
+			{ id:13, pId:1, name:"基础档案", open:false},
+			{ id:131, pId:13, name:"xxx"},
+			
+			{ id:14, pId:1, name:"总账", open:false},
+			{ id:141, pId:14, name:"xxx"},
+			
+			{ id:15, pId:1, name:"销售管理", open:true},
+			{ id:151, pId:15, name:"销售订单", open:true},
+			{ id:1511, pId:151, name:"新增"},
+			{ id:152, pId:15, name:"销售发货单", open:true},
+			{ id:1521, pId:152, name:"新增"},
+			{ id:153, pId:15, name:"退货申请单", open:true},
+			{ id:1531, pId:153, name:"新增"},
+			
+			{ id:16, pId:1, name:"应收管理", open:true},
+			{ id:161, pId:16, name:"收款单", open:true},
+			{ id:1611, pId:161, name:"新增"},
+		];
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.expandNode(treeNode);
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		//-->
+	</SCRIPT>
+		
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="content_body">
+				<div class="app_header" style="height: 34px;   line-height:34px;   overflow:hidden;  ">
+					<a class="nav_link" style="float: left; font-size: 19px; color: #2f86d9;" href="appList.html">API中心</a>
+					
+					
+				</div>
+				<div class="dashed_line"></div>
+				
+			    <div class="api_content" style="height: 2000px;">
+				    	
+			  		<div class="api_left_nav"> 
+			  			<ul id="treeDemo" class="ztree"></ul>
+			  		</div>
+			  		
+			  		<div class="api_right_content">
+			  			<!--/头部-->
+						<!-- body 开始 -->
+						<div class="body">
+							
+							<div class="content clearfix">
+								<div class="main" style="padding-left:24px;">
+			
+									<!-- 此部分引入mediawiki搭建的内容 开始 -->
+									<h2 class="fixmt">tradeid/get</h2>
+									<hr>
+									<div class="contentSub">
+										<div id="bodyContent" style="padding-left:24px;">
+											<table id="toc" class="toc" summary="目录">
+												<tr>
+													<td>
+														<div id="toctitle">
+															<h2>目录</h2>
+														</div>
+														<ul>
+															<li class="toclevel-1"><a href="#1..E6.8E.A5.E5.8F.A3.E8.AF.B4.E6.98.8E"><span class="tocnumber">1</span> <span class="toctext">1.接口说明</span></a>
+															</li>
+															<li class="toclevel-1"><a href="#2..E4.BD.BF.E7.94.A8.E5.9C.BA.E6.99.AF"><span class="tocnumber">2</span> <span class="toctext">2.使用场景</span></a>
+															</li>
+															<li class="toclevel-1"><a href="#3..E6.8E.A5.E5.8F.A3.E8.B0.83.E7.94.A8.E8.AF.B4.E6.98.8E"><span class="tocnumber">3</span> <span class="toctext">3.接口调用说明</span></a>
+																<ul>
+																	<li class="toclevel-2"><a href="#3.1.E8.AF.B7.E6.B1.82.E8.AF.B4.E6.98.8E"><span class="tocnumber">3.1</span> <span class="toctext">3.1请求说明</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.2.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"><span class="tocnumber">3.2</span> <span class="toctext">3.2输入参数说明</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.3.E8.AF.B7.E6.B1.82.E7.A4.BA.E4.BE.8B"><span class="tocnumber">3.3</span> <span class="toctext">3.3请求示例</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.4.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"><span class="tocnumber">3.4</span> <span class="toctext">3.4返回参数说明</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.5.E8.BF.94.E5.9B.9E.E7.A0.81.E8.AF.B4.E6.98.8E"><span class="tocnumber">3.5</span> <span class="toctext">3.5返回码说明</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.6.E6.AD.A3.E7.A1.AE.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B"><span class="tocnumber">3.6</span> <span class="toctext">3.6正确返回示例</span></a>
+																	</li>
+																	<li class="toclevel-2"><a href="#3.7.E9.94.99.E8.AF.AF.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B"><span class="tocnumber">3.7</span> <span class="toctext">3.7错误返回示例</span></a>
+																	</li>
+																</ul>
+															</li>
+															<li class="toclevel-1"><a href="#4..E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98"><span class="tocnumber">4</span> <span class="toctext">4.相关问题</span></a>
+															</li>
+														</ul>
+													</td>
+												</tr>
+											</table>
+											<script type="text/javascript">
+												if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); }
+											</script>
+											<a name="1..E6.8E.A5.E5.8F.A3.E8.AF.B4.E6.98.8E" id="1..E6.8E.A5.E5.8F.A3.E8.AF.B4.E6.98.8E"></a>
+											<h2> <span class="mw-headline">1.接口说明</span></h2>
+											<p>获取交易号
+												<br />
+											</p>
+											<a name="2..E4.BD.BF.E7.94.A8.E5.9C.BA.E6.99.AF" id="2..E4.BD.BF.E7.94.A8.E5.9C.BA.E6.99.AF"></a>
+											<h2> <span class="mw-headline">2.使用场景</span></h2>
+											<p>post请求需提供交易号 可以防止重复提交。
+												<br />
+											</p>
+											<a name="3..E6.8E.A5.E5.8F.A3.E8.B0.83.E7.94.A8.E8.AF.B4.E6.98.8E" id="3..E6.8E.A5.E5.8F.A3.E8.B0.83.E7.94.A8.E8.AF.B4.E6.98.8E"></a>
+											<h2> <span class="mw-headline">3.接口调用说明</span></h2>
+											<a name="3.1.E8.AF.B7.E6.B1.82.E8.AF.B4.E6.98.8E" id="3.1.E8.AF.B7.E6.B1.82.E8.AF.B4.E6.98.8E"></a>
+											<h3> <span class="mw-headline">3.1请求说明</span></h3>
+											<table class="t">
+												<tr>
+													<td>url
+													</td>
+													<td>https://openapi.yonyouup.com/system/tradeid
+													</td>
+												</tr>
+			
+												<tr class="h">
+													<td>格式
+													</td>
+													<td>JSON
+													</td>
+												</tr>
+												<tr>
+													<td>https请求方式
+													</td>
+													<td>GET
+													</td>
+												</tr>
+			
+											</table>
+											<p>
+												<br />
+											</p>
+											<a name="3.2.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E" id="3.2.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"></a>
+											<h3> <span class="mw-headline">3.2输入参数说明</span></h3>
+											<p>
+												<table class="t">
+													<tr>
+														<th width="80"><b>参数</b>
+														</th>
+														<th width="80"><b>是否必填</b>
+														</th>
+														<th width="150"><b>描述</b>
+														</th>
+													</tr>
+													<tr>
+														<td>from_account</td>
+														<td>是</td>
+														<td>调用方id</td>
+													</tr>
+			
+													<tr>
+														<td>appid</td>
+														<td>是</td>
+														<td>api编号</td>
+													</tr>
+			
+													<tr class="h">
+														<td>secret</td>
+														<td>是</td>
+														<td>密钥</td>
+													</tr>
+			
+												</table>
+											</p>
+											<a name="3.3.E8.AF.B7.E6.B1.82.E7.A4.BA.E4.BE.8B" id="3.3.E8.AF.B7.E6.B1.82.E7.A4.BA.E4.BE.8B"></a>
+											<h3> <span class="mw-headline">3.3请求示例</span></h3>
+			
+											<div class="code">
+												<p>https://openapi.yonyouup.com/api/system/tradeid?
+													<br /> from_account=FromAccount&amp;
+													<br /> appid=APPID&amp;
+			
+													<br /> secret=APPSECRET
+													<br />
+			
+												</p>
+											</div>
+											<p>
+												<br />
+											</p>
+											<a name="3.4.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E" id="3.4.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"></a>
+											<h3> <span class="mw-headline">3.4返回参数说明</span></h3>
+											<table class="t">
+												<tr>
+													<th width="80"><b>参数说明</b>
+													</th>
+													<th width="150"><b>描述</b>
+													</th>
+												</tr>
+												<tr>
+													<td>errcode
+													</td>
+													<td>错误码，0 为正常。
+													</td>
+												</tr>
+												<tr class="h">
+													<td>errmsg
+													</td>
+													<td>错误信息。
+													</td>
+												</tr>
+												<tr>
+													<td>id
+													</td>
+													<td>交易号。
+													</td>
+												</tr>
+												<tr class="h">
+													<td>createDate
+													</td>
+													<td>创建时间。
+													</td>
+												</tr>
+												<tr>
+													<td>status
+													</td>
+													<td>状态( init 初始化 running 运行中 finished 已完成)。
+													</td>
+												</tr>
+			
+											</table>
+											<a name="3.6.E6.AD.A3.E7.A1.AE.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B" id="3.6.E6.AD.A3.E7.A1.AE.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B"></a>
+											<h3> <span class="mw-headline">3.5正确返回示例</span></h3>
+											<p>JSON示例:
+												<br />
+											</p>
+											<div class="code">
+												<p>Content-type: text/html; charset=utf-8
+													<br /> {
+													<br/> "errcode": "0",
+													<br/> "errmsg": "success",
+													<br/> "trade": {
+													<br/> &nbsp; "createDate": 1427332810639,
+													<br/> &nbsp; "id": "40d8c9b4d35611e4ab8e0017fa000443",
+													<br/> &nbsp; "status": "init"
+													<br/> }
+													<br/> }
+			
+													<br />
+												</p>
+											</div>
+											<a name="3.7.E9.94.99.E8.AF.AF.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B" id="3.7.E9.94.99.E8.AF.AF.E8.BF.94.E5.9B.9E.E7.A4.BA.E4.BE.8B"></a>
+											<h3> <span class="mw-headline">3.6错误返回示例</span></h3>
+											<div class="code">
+												<p>Content-type: text/html; charset=utf-8
+													<br /> {
+													<br/> "errcode" : "2001",
+													<br/> "errmsg" : "fail"
+													<br/> }
+			
+													<br/>
+												</p>
+											</div>
+			
+										</div>
+									</div>
+									<!-- 此部分引入mediawiki搭建的内容 结束 -->
+								</div>
+							</div>
+						</div>
+						<!-- body 结束 -->
+						<!--footer-->
+
+		  				
+			  			
+			  			
+			  			
+			  		</div>
+				
+			</div>
+			
+			<div class="global_footer">
+				
+				<div class="footer_line">
+					
+				</div>
+				<div class="footer_body">
+					<a class="normal_link" href="#about">关于用友优普开放平台</a>
+					丨       
+					<a class="normal_link" href="#about">联系我们</a>
+					丨        
+		        	<a class="normal_link" href="#about">平台服务协议</a>
+		        	丨
+			        <a class="normal_link" href="#about"> 用友优普</a>        
+				</div>
+				<div class="footer_bottom">
+					用友优普信息技术有限公司 © yonyou up information technology Co., Ltd.
+				</div>
+		</div>
+		</div>
+	
+		
+	</body>
+</html>

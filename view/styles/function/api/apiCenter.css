@@ -2,6 +2,7 @@
 	padding : 30px 0;
 	margin: 0;
 	height: 700px;
+	
 }
 
 .api_left_nav{
@@ -12,7 +13,9 @@
 }
 
 .api_right_content{
-	width: auto;
+	width: 800px;
+	float: left;
+	
 	font-weight: normal;
 	font-family: "微软雅黑","宋体","SimSun","Arial Narrow", Arial, Helvetica, sans-serif;
 }
@@ -41,28 +44,28 @@
 	margin-bottom: 65px;
 }
 
-h3{
+.apiCenterHome h3{
 	font-size: 17px;
 }
 
-p{
+.apiCenterHome p{
 	font-size: 14px;
 	padding: 20px;
 }
 
-table{
+.apiCenterHome table{
 	border: 1px solid #333; 
 	width: 750px;
 }
 
-table td{
+.apiCenterHome table td{
 	border: 1px solid #333; 
 	font-size: 12px;
 	text-align: center;
 	height: 30px;
 }
 
-table th{
+.apiCenterHome table th{
 	border: 1px solid #333; 
 	text-align: center;
 	background-color:#666; 

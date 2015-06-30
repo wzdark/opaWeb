@@ -1,0 +1,10 @@
+label.error{
+	margin-left: 0px;
+	background: none;
+	padding-left: 0px;
+}
+
+.disabled_btn{
+	color: #A5A6AA !important;
+	background-color: #E6E7EC !important;
+}

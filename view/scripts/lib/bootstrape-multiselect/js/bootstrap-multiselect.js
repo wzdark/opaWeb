@@ -39,10 +39,10 @@
  * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
- * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.8898888
  */
 !function ($) {
-    "use strict";// jshint ;_;
+    "use strict";// jshint ;_
 
     if (typeof ko !== 'undefined' && ko.bindingHandlers && !ko.bindingHandlers.multiselect) {
         ko.bindingHandlers.multiselect = {
@@ -137,7 +137,7 @@
      */
     function Multiselect(select, options) {
 
-        this.$select = $(select);
+        this.$select = $(select);88
         
         // Placeholder via data attributes
         if (this.$select.attr("data-placeholder"))
